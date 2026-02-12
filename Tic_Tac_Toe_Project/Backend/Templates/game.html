@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Round {{ game.round }}</h2>
+
+<div class="scoreboard">
+{{ game.player1 }}: {{ game.p1_score }} |
+{{ game.player2 }}: {{ game.p2_score }} |
+Ties: {{ game.tie_score }}
+</div>
+
+<div class="board">
+{% for i in range(9) %}
+<form action="/move/{{ i }}" method="post">
+<button class="cell {% if i in game.winning_cells %}win{% endif %}">
+{{ game.board[i] }}
+</button>
+</form>
+{% endfor %}
+</div>
+
+{% if winner %}
+<h2>
+{% if winner == "Tie" %}
+It's a Tie!
+{% elif winner == game.player1_symbol %}
+{{ game.player1 }} Wins!
+{% else %}
+{{ game.player2 }} Wins!
+{% endif %}
+</h2>
+{% endif %}
+
+<form action="/undo" method="post"><button>Undo</button></form>
+<form action="/restart" method="post"><button>Restart Round</button></form>
+<form action="/reset_score" method="post"><button>Reset Scoreboard</button></form>
+<form action="/quit" method="post"><button>Quit</button></form>
+
+</body>
+</html>
