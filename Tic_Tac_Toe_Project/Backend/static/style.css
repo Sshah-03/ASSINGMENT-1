@@ -1,0 +1,49 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background: linear-gradient(135deg,#1f1c2c,#928dab);
+    color: white;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3,120px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px;
+    animation: fade 0.5s ease-in;
+}
+
+@keyframes fade {
+    from {opacity:0; transform:scale(0.9);}
+    to {opacity:1; transform:scale(1);}
+}
+
+.cell {
+    width:120px;
+    height:120px;
+    font-size:40px;
+    border-radius:15px;
+    border:none;
+    background:rgba(255,255,255,0.2);
+    color:white;
+    transition:0.3s;
+}
+
+.cell:hover {
+    transform:scale(1.1);
+    background:rgba(255,255,255,0.4);
+}
+
+.win {
+    background:gold !important;
+    color:black;
+}
+
+button {
+    padding:8px 15px;
+    margin:5px;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+}

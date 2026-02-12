@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>Leaderboard</h1>
+<table>
+<tr><th>Rank</th><th>Player</th><th>Wins</th></tr>
+{% for player in players %}
+<tr>
+<td>{{ loop.index }}</td>
+<td>{{ player.player_name }}</td>
+<td>{{ player.wins }}</td>
+</tr>
+{% endfor %}
+</table>
+<br>
+<a href="/"><button>Home</button></a>
+</body>
+</html>

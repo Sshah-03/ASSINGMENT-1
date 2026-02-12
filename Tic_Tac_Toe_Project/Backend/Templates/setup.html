@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h2>Game Setup</h2>
+<form action="/start" method="post">
+<input name="p1" placeholder="Player 1 Name" required><br><br>
+
+{% if mode == "multi" %}
+<input name="p2" placeholder="Player 2 Name" required><br><br>
+{% endif %}
+
+<label>Select Symbol:</label><br>
+<input type="radio" name="symbol" value="X" checked> X
+<input type="radio" name="symbol" value="O"> O
+<br><br>
+
+{% if mode == "single" %}
+<label>Difficulty:</label>
+<select name="level">
+<option value="easy">Easy</option>
+<option value="medium">Medium</option>
+<option value="hard">Hard</option>
+</select>
+<br><br>
+{% endif %}
+
+<button type="submit">Start Game</button>
+</form>
+</body>
+</html>
