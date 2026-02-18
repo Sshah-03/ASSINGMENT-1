@@ -1,0 +1,10 @@
+Functional Requirements for web scraping project:-
+1. Scrape 3+ Data sources : ex:- Reddit, Hacker News, and Fake store API
+2. Fetch Data Concurrently. 
+3. Implement Rate limitng.
+4. Implement Caching.
+5. Retry Failed requests.
+6. Validate Data.
+7. Aggregate Data.
+8. Export results to CSV.
+9. Proper logging.
